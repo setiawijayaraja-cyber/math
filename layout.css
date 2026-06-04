@@ -1,0 +1,167 @@
+.app-shell {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%);
+  color: #fff;
+  font-weight: 900;
+  font-size: 1.35rem;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.topbar .subtitle {
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+  font-size: 0.93rem;
+}
+
+.top-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.page-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: minmax(240px, 1fr) 2.25fr;
+  margin-top: 1.25rem;
+}
+
+.sidebar {
+  position: sticky;
+  top: 1rem;
+  align-self: start;
+  display: grid;
+  gap: 1rem;
+}
+
+.sidebar-card,
+.card {
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+}
+
+.sidebar-nav {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.sidebar-nav a {
+  display: block;
+  padding: 0.95rem 1rem;
+  border-radius: 16px;
+  background: var(--surface-strong);
+  border: 1px solid transparent;
+  color: var(--text);
+  font-weight: 600;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a:focus-visible {
+  transform: translateX(2px);
+  border-color: var(--primary);
+}
+
+.content {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.hero-banner {
+  display: grid;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(29, 78, 216, 0.14), rgba(56, 189, 248, 0.08));
+  border-radius: var(--radius);
+  border: 1px solid var(--surface-border);
+}
+
+.hero-banner h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.05;
+}
+
+.hero-banner p {
+  margin: 1rem 0 0;
+  max-width: 56rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.section-header {
+  margin-bottom: 1rem;
+}
+
+.section-header h3 {
+  margin: 0;
+  font-size: 1.12rem;
+}
+
+.section-header p {
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.split-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 1024px) {
+  .page-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .split-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+footer {
+  margin-top: 1rem;
+  text-align: center;
+  color: var(--muted);
+}

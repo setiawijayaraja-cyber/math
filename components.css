@@ -1,0 +1,196 @@
+.btn {
+  border: none;
+  border-radius: 999px;
+  padding: 0.85rem 1.25rem;
+  transition: transform 0.18s ease, background-color 0.18s ease, color 0.18s ease;
+  background: var(--surface-soft);
+  color: var(--text);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn.primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn.secondary {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.btn.small {
+  padding: 0.7rem 1rem;
+}
+
+.icon-btn {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+}
+
+.search-row,
+.graph-controls,
+.input-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.search-row {
+  grid-template-columns: minmax(180px, 1fr) minmax(120px, 240px) auto;
+}
+
+.search-row input,
+.search-row select,
+.input-grid input,
+.input-grid select,
+textarea {
+  width: 100%;
+  border: 1px solid var(--surface-border);
+  border-radius: 999px;
+  background: var(--surface-strong);
+  padding: 0.95rem 1rem;
+  color: var(--text);
+}
+
+textarea {
+  border-radius: 20px;
+  min-height: 170px;
+  resize: vertical;
+}
+
+.result-box,
+.diagram-box,
+.formula-results,
+.formula-detail,
+.quiz-options {
+  margin-top: 1rem;
+  background: var(--surface-strong);
+  border: 1px solid var(--surface-border);
+  border-radius: 22px;
+  padding: 1rem;
+}
+
+.formula-results {
+  display: grid;
+  gap: 1rem;
+}
+
+.formula-item,
+.quiz-card,
+.favorite-card,
+.stat-card,
+.badge {
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: 18px;
+  padding: 1rem;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.formula-detail-inputs {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.formula-detail-inputs input {
+  width: 100%;
+  border: 1px solid var(--surface-border);
+  background: var(--surface-strong);
+  padding: 0.85rem 1rem;
+  border-radius: 16px;
+}
+
+.formula-item h4,
+.quiz-card h4,
+.favorite-card h4 {
+  margin: 0 0 0.5rem;
+}
+
+.formula-item p,
+.favorite-card p {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+}
+
+.quiz-options {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.quiz-options button {
+  justify-content: flex-start;
+}
+
+.badges {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-weight: 600;
+}
+
+.stat-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.stat-card {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.stat-card strong {
+  font-size: 1.4rem;
+}
+
+.calc-display {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 20px;
+  border: 1px solid var(--surface-border);
+  background: var(--surface-strong);
+  color: var(--text);
+  font-size: 1.4rem;
+  text-align: right;
+}
+
+.calc-buttons {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.calc-buttons button {
+  min-height: 54px;
+  border-radius: 16px;
+}
+
+.graph-canvas {
+  width: 100%;
+  height: 280px;
+  border-radius: 22px;
+  background: var(--surface-strong);
+  border: 1px solid var(--surface-border);
+}
+
+@media (max-width: 640px) {
+  .search-row,
+  .graph-controls,
+  .input-grid {
+    grid-template-columns: 1fr;
+  }
+}

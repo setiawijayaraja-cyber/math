@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WINGS Math Malaysia Ultimate</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">W</div>
+        <div>
+          <h1>WINGS Math Malaysia Ultimate</h1>
+          <p class="subtitle">Portal pembelajaran matematik offline KSSM &amp; SPM.</p>
+        </div>
+      </div>
+      <div class="top-actions">
+        <button id="themeToggle" class="btn icon-btn" aria-label="Toggle theme">🌙</button>
+        <button id="langToggle" class="btn icon-btn" aria-label="Toggle language">EN</button>
+      </div>
+    </header>
+
+    <div class="page-grid">
+      <aside class="sidebar">
+        <div class="sidebar-card">
+          <div class="section-header"><h3>Menu Utama</h3></div>
+          <nav class="sidebar-nav">
+            <a href="#dashboard">Dashboard</a>
+            <a href="#quick-answer">Quick Answer</a>
+            <a href="#formula-library">Formula</a>
+            <a href="#visual-learning">Visual</a>
+            <a href="#graph-engine">Graph</a>
+            <a href="#matrix-stats">Matrix & Stats</a>
+            <a href="#prob-finance">Probability & Finance</a>
+            <a href="#spm-mode">SPM</a>
+            <a href="#study-tools">Study Tools</a>
+            <a href="#search-tools">Search</a>
+          </nav>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="section-header"><h3>Ringkasan Pantas</h3></div>
+          <div class="stat-card"><strong>Jumlah Latihan</strong><p id="statPractice">0</p></div>
+          <div class="stat-card"><strong>Purata</strong><p id="statAverage">0%</p></div>
+          <div class="stat-card"><strong>Topik Kuat</strong><p id="statStrong">-</p></div>
+          <div class="stat-card"><strong>Topik Lemah</strong><p id="statWeak">-</p></div>
+        </div>
+      </aside>
+
+      <main class="content">
+        <section class="hero-banner">
+          <h2 data-key="homeHeadline">Semua alat matematik dalam satu aplikasi</h2>
+          <p data-key="homeDescription">Belajar, berlatih dan semak sendiri topik SPM dengan kalkulator, formula, soalan latihan dan carta prestasi.</p>
+          <div class="hero-actions">
+            <a href="#dashboard" class="btn primary" data-key="btnDashboard">Buka Dashboard</a>
+            <a href="#spm-mode" class="btn secondary" data-key="btnExamMode">Mulakan Mod SPM</a>
+          </div>
+        </section>
+
+        <section id="dashboard" class="card">
+          <div class="section-header"><h3>Dashboard Pembelajaran</h3><p>Pantau prestasi, sesi dan pencapaian.</p></div>
+          <div class="stat-grid">
+            <div class="stat-card"><strong>Latihan Hari Ini</strong><p id="todayPractice">0</p></div>
+            <div class="stat-card"><strong>Masa Belajar</strong><p id="studyTime">0 min</p></div>
+            <div class="stat-card"><strong>Topik Kuat</strong><p id="statStrong">-</p></div>
+            <div class="stat-card"><strong>Topik Lemah</strong><p id="statWeak">-</p></div>
+          </div>
+          <div class="badges" id="badgeList"></div>
+        </section>
+
+        <section id="quick-answer" class="card">
+          <div class="section-header"><h3>Quick Answer Mode</h3><p>Cari jawapan cepat berdasarkan topik dan nombor soalan.</p></div>
+          <div class="search-row">
+            <select id="quickTopic"></select>
+            <input id="quickQuestionNumber" type="number" min="1" placeholder="No. soalan" />
+            <button id="quickAnswerBtn" class="btn primary">Dapatkan Jawapan</button>
+          </div>
+          <div id="quickAnswerResult" class="result-box"></div>
+        </section>
+
+        <section id="formula-library" class="card">
+          <div class="section-header"><h3 data-key="formulaLibraryTitle">Formula Engine</h3><p data-key="formulaLibrarySubtitle">Cari formula, simpan kegemaran dan baca penjelasan ringkas.</p></div>
+          <div class="search-row">
+            <input id="formulaSearch" type="search" placeholder="Cari formula, topik atau penggunaan" />
+            <select id="formulaCategory"></select>
+            <button id="formulaClear" class="btn small">Kosongkan</button>
+          </div>
+          <div id="formulaResults" class="formula-results"></div>
+          <div id="formulaDetail" class="formula-detail"></div>
+        </section>
+
+        <section id="visual-learning" class="card">
+          <div class="section-header"><h3>Visual Learning</h3><p>Rajah interaktif untuk memahami konsep geometri dan graf.</p></div>
+          <div class="search-row">
+            <select id="diagramSelect"></select>
+            <button id="diagramRefresh" class="btn small">Tukar</button>
+          </div>
+          <div id="diagramView" class="diagram-box"></div>
+        </section>
+
+        <section id="graph-engine" class="card">
+          <div class="section-header"><h3>Graph Engine</h3><p>Ubah parameter dan lihat graf linear, kuadratik atau trigonometri secara langsung.</p></div>
+          <div class="graph-controls">
+            <select id="graphType">
+              <option value="linear">y = mx + c</option>
+              <option value="quadratic">y = ax² + bx + c</option>
+              <option value="sin">y = A sin(Bx + C)</option>
+              <option value="cos">y = A cos(Bx + C)</option>
+              <option value="tan">y = A tan(Bx)</option>
+            </select>
+            <div class="input-grid" id="graphInputs"></div>
+            <button id="drawGraphBtn" class="btn primary">Lukis Graf</button>
+          </div>
+          <canvas id="graphCanvas" class="graph-canvas" width="720" height="320"></canvas>
+          <div id="graphAnalysis" class="result-box"></div>
+        </section>
+
+        <section id="matrix-stats" class="card split-grid">
+          <div>
+            <div class="section-header"><h3>Matrix Engine</h3><p>Operasi matriks 2x2 dan 3x3.</p></div>
+            <div id="matrixEngine"></div>
+          </div>
+          <div>
+            <div class="section-header"><h3>Statistics Pro</h3><p>Kira mean, median, mod, varians dan gambaran data.</p></div>
+            <div id="statsEngine"></div>
+          </div>
+        </section>
+
+        <section id="prob-finance" class="card split-grid">
+          <div>
+            <div class="section-header"><h3>Probability Engine</h3><p>Kira peluang dadu, syiling, kad dan pokok kebarangkalian.</p></div>
+            <div id="probabilityEngine"></div>
+          </div>
+          <div>
+            <div class="section-header"><h3>Financial Math</h3><p>Simulasi simpanan, pelaburan, pinjaman dan ROI.</p></div>
+            <div id="financeEngine"></div>
+          </div>
+        </section>
+
+        <section id="spm-mode" class="card">
+          <div class="section-header"><h3>Mod SPM</h3><p>Kuiz SPM ringkas dengan soalan rawak dan analisis topik.</p></div>
+          <div class="search-row">
+            <select id="examTopic"></select>
+            <select id="examLevel"></select>
+            <button id="startExamBtn" class="btn primary">Mula Sesi</button>
+          </div>
+          <div id="examCard" class="result-box"></div>
+          <div id="examResult" class="result-box"></div>
+        </section>
+
+        <section id="study-tools" class="card split-grid">
+          <div>
+            <div class="section-header"><h3>Study Notes</h3><p>Tulis nota penting dan simpan rujukan.</p></div>
+            <textarea id="studyNotes" placeholder="Tulis nota anda di sini..."></textarea>
+            <button id="saveNotesBtn" class="btn secondary">Simpan Nota</button>
+          </div>
+          <div>
+            <div class="section-header"><h3>Favorites & Review</h3><p>Simpan formula penting dan ulang kaji dengan cepat.</p></div>
+            <div id="favoriteList"></div>
+            <div id="studyContent" class="result-box"></div>
+          </div>
+        </section>
+
+        <section id="search-tools" class="card">
+          <div class="section-header"><h3>Search & Export</h3><p>Cari formula, soalan dan eksport data anda.</p></div>
+          <div class="search-row">
+            <input id="globalSearch" type="search" placeholder="Cari formula, soalan atau topik" />
+            <button id="globalSearchBtn" class="btn primary">Cari</button>
+            <button id="exportJson" class="btn small">Eksport JSON</button>
+            <button id="exportCsv" class="btn small">Eksport CSV</button>
+          </div>
+          <div id="globalSearchResults" class="formula-results"></div>
+        </section>
+      </main>
+    </div>
+
+    <footer>
+      <p>WINGS Math Malaysia Ultimate • Bekerja sepenuhnya offline</p>
+    </footer>
+  </div>
+
+  <script src="data/formulas.js"></script>
+  <script src="data/questions.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/formulaLibrary.js"></script>
+  <script src="js/quickAnswer.js"></script>
+  <script src="js/graphEngine.js"></script>
+  <script src="js/diagram.js"></script>
+  <script src="js/quizExam.js"></script>
+  <script src="js/notes.js"></script>
+  <script src="js/search.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
